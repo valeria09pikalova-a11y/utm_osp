@@ -151,6 +151,7 @@
 
   <h2>Готовая ссылка:</h2>
   <p id="result"></p>
+    <button onclick="copyLink()">Скопировать ссылку</button>
   <p id="bye" class="bye"></p>
 
   <script>
@@ -163,6 +164,13 @@
  let finalUrl = url + "?utm_source=" + source + "&utm_campaign=" + project + "&utm_content=" + whatIsIt;
 
   document.getElementById("result").innerText = finalUrl
+      function copyLink() {
+  const text = document.getElementById("result").innerText;
+
+  navigator.clipboard.writeText(text);
+
+  alert("Ссылка скопирована 👍");
+}
   document.getElementById("bye").innerText =
 "✨ Ссылка готова! Хорошего тебе дня, дорогая ❤️";
 
