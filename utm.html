@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #fff7f6;
+    margin: 0;
+    padding: 40px;
+    color: #2b2b2b;
+  }
+
+  .card {
+    max-width: 680px;
+    margin: 0 auto;
+    background: white;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  }
+
+  .hello {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: #D41F17;
+  }
+
+  h1 {
+    margin-top: 0;
+    font-size: 32px;
+  }
+
+  p {
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 16px;
+    border: 1px solid #e2d7d5;
+    border-radius: 12px;
+    font-size: 15px;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    background: #D41F17;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.9;
+  }
+
+  #result {
+    margin-top: 16px;
+    padding: 16px;
+    background: #fff0ee;
+    border-radius: 14px;
+    word-break: break-all;
+    font-weight: normal;
+  }
+
+.bye {
+  margin-top: 24px;
+  text-align: center;
+  color: #777;
+  font-weight: normal;
+}
+
+</style>
+</head>
+<body>
+<title>UTM отдела сопровождения продуктов</title>
+  <p class="hello">
+  Привет! Ты устала? Давай помогу сделать UTM-ссылку ✨
+</p>
+
+  <p>Исходная ссылка</p>
+  <input id="url" placeholder="https://um.mos.ru">
+  <div class="card">
+  
+
+<p>Источник</p>
+  <select id="source">
+<option value="email">Email-рассылка</option>
+<option value="digest">Дайджест</option>
+<option value="press_release">Пресс-релиз</option>
+<option value="banner">Баннер</option>
+<option value="dit_post">Пост в ДИТ</option>
+<option value="um_post">Пост в УМ</option>
+<option value="km_post">Пост в КМ</option>
+<option value="pp_post">Пост в ПП</option>
+<option value="seeding">Посев</option>
+<option value="partner_post">Пост у партнера</option>
+<option value="article">Статья</option>
+<option value="site">Сайт</option>
+  </select>
+
+  <p>Проект</p>
+  <select id="project">
+  <option value="uznai_moskvu">Узнай Москву</option>
+  <option value="karta_moskvicha">Карта москвича</option>
+  <option value="moy_id">Мой ID</option>
+  <option value="portal_postavshikov">Портал поставщиков</option>
+  <option value="portal_potrebitelya">Портал потребителя</option>
+  <option value="biblioteki_moskvy">Библиотеки Москвы</option>
+  <option value="moya_moskva">Моя Москва</option>
+  <option value="mosuslugi">Мосуслуги</option>
+  <option value="moi_platezhi">Мои платежи</option>
+  </select>
+
+<p>Что это</p>
+<select id="whatIsIt">
+<option value="route">Маршрут</option>
+<option value="building">Здание</option>
+<option value="person">Личность</option>
+<option value="audio">Аудиогид</option>
+<option value="special">Спецпроект</option>
+<option value="loyalty">Программа лояльности</option>
+<option value="news">Новость</option>
+<option value="service">Сервис</option>
+<option value="million_prizov">Миллион призов УМ</option>
+<option value="quiz">Квиз</option>
+<option value="quest">Квест</option>
+  </select>
+
+<p>Автор</p>
+<select id="author">
+  <option value="anna">Анна</option>
+  <option value="kristina">Кристина</option>
+  <option value="yulia_ch">Юлия Ч</option>
+  <option value="yulia_e">Юлия Е</option>
+  <option value="valeria">Валерия</option>
+</select>
+
+  <br><br>
+
+  <button onclick="makeUtm()">Сформировать</button>
+
+  <h2>Готовая ссылка:</h2>
+  <p id="result"></p>
+  <p id="bye" class="bye"></p>
+
+  <script>
+    function makeUtm() {
+  let url = document.getElementById("url").value;
+  let source = document.getElementById("source").value;
+  let project = document.getElementById("project").value;
+  let whatIsIt = document.getElementById("whatIsIt").value;
+
+ let finalUrl = url + "?utm_source=" + source + "&utm_campaign=" + project + "&utm_content=" + whatIsIt;
+
+  document.getElementById("result").innerText = finalUrl
+  document.getElementById("bye").innerText =
+"✨ Ссылка готова! Хорошего тебе дня, дорогая ❤️";
+
+}
+  </script>
+
+</body>
+</html>
