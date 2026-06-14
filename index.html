@@ -155,26 +155,25 @@
   <p id="bye" class="bye"></p>
 
   <script>
-    function makeUtm() {
-  let url = document.getElementById("url").value;
-  let source = document.getElementById("source").value;
-  let project = document.getElementById("project").value;
-  let whatIsIt = document.getElementById("whatIsIt").value;
+  function makeUtm() {
+    let url = document.getElementById("url").value;
+    let source = document.getElementById("source").value;
+    let project = document.getElementById("project").value;
+    let whatIsIt = document.getElementById("whatIsIt").value;
 
- let finalUrl = url + "?utm_source=" + source + "&utm_campaign=" + project + "&utm_content=" + whatIsIt;
+    let finalUrl = url + "?utm_source=" + source + "&utm_campaign=" + project + "&utm_content=" + whatIsIt;
 
-  document.getElementById("result").innerText = finalUrl
-      function copyLink() {
-  const text = document.getElementById("result").innerText;
+    document.getElementById("result").innerText = finalUrl;
+    document.getElementById("bye").innerText = "✨ Ссылка готова! Хорошего тебе дня, дорогая ❤️";
+  }
 
-  navigator.clipboard.writeText(text);
+  function copyLink() {
+    let text = document.getElementById("result").innerText;
 
-  alert("Ссылка скопирована 👍");
-}
-  document.getElementById("bye").innerText =
-"✨ Ссылка готова! Хорошего тебе дня, дорогая ❤️";
+    navigator.clipboard.writeText(text);
 
-}
+    alert("Ссылка скопирована 👍");
+  }
   </script>
 
 </body>
