@@ -102,10 +102,15 @@
 <option value="um_post">Пост в УМ</option>
 <option value="km_post">Пост в КМ</option>
 <option value="pp_post">Пост в ПП</option>
-<option value="seeding">Посев</option>
 <option value="partner_post">Пост у партнера</option>
 <option value="article">Статья</option>
 <option value="site">Сайт</option>
+<option value="mainpage">Главная страница</option>
+<option value="vebinar">Вебинар</option>
+<option value="epd">ЕПД</option>
+<option value="mpmoyamoscow">МП "Моя Москва"</option>
+<option value="mpmyid">МП "Мой id"</option>
+<option value="news">Пресс-релиз</option>
   </select>
 
   <p>Проект</p>
@@ -119,6 +124,9 @@
   <option value="moya_moskva">Моя Москва</option>
   <option value="mosuslugi">Мосуслуги</option>
   <option value="moi_platezhi">Мои платежи</option>
+  <option value="perezvini_sam">Перезвони сам</option>
+  <option value="blago">Благо на mos.ru</option>
+  <option value="arendagorprostranstv">Аренда городских пространств</option>
   </select>
 
 <p>Что это</p>
@@ -134,6 +142,7 @@
 <option value="million_prizov">Миллион призов УМ</option>
 <option value="quiz">Квиз</option>
 <option value="quest">Квест</option>
+
   </select>
 
 <p>Автор</p>
@@ -151,30 +160,35 @@
 
   <h2>Готовая ссылка:</h2>
   <p id="result"></p>
- <button id="copyButton" onclick="copyLink()" style="display: none;">Скопировать ссылку</button>
+  <button onclick="copyLink()">Скопировать ссылку</button>
   <p id="bye" class="bye"></p>
 
   <script>
-  function makeUtm() {
-    let url = document.getElementById("url").value;
-    let source = document.getElementById("source").value;
-    let project = document.getElementById("project").value;
-    let whatIsIt = document.getElementById("whatIsIt").value;
+function makeUtm() {
+  let url = document.getElementById("url").value;
+  let source = document.getElementById("source").value;
+  let project = document.getElementById("project").value;
+  let whatIsIt = document.getElementById("whatIsIt").value;
 
-    let finalUrl = url + "?utm_source=" + source + "&utm_campaign=" + project + "&utm_content=" + whatIsIt;
+  let finalUrl = url +
+    "?utm_source=" + source +
+    "&utm_campaign=" + project +
+    "&utm_content=" + whatIsIt;
 
-    document.getElementById("result").innerText = finalUrl;
-    document.getElementById("copyButton").style.display = "block";
-    document.getElementById("bye").innerText = "✨ Ссылка готова! Хорошего тебе дня, дорогая ❤️";
-  }
+  document.getElementById("result").innerText = finalUrl;
 
-  function copyLink() {
-    let text = document.getElementById("result").innerText;
+  document.getElementById("bye").innerText =
+    "✨ Ссылка готова! Хорошего тебе дня, дорогая ❤️";
+}
 
-    navigator.clipboard.writeText(text);
+function copyLink() {
+  const text = document.getElementById("result").innerText;
 
-    alert("Ссылка скопирована 👍");
-  }
+  navigator.clipboard.writeText(text);
+
+  alert("Ссылка скопирована 👍");
+}
+
   </script>
 
 </body>
